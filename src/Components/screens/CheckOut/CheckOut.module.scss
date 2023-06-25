@@ -1,0 +1,90 @@
+@import '../../../_variables.scss';
+
+.wrapperItems {
+	position: relative;
+}
+.wrapperPrice {
+	> div {
+		position: absolute;
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: 445px;
+		top: 200px;
+		height: 140px;
+		align-items: center;
+		> h2 {
+			width: 100%;
+		}
+	}
+}
+.soundtrackContainer {
+	height: 25px;
+	max-width: 25%;
+	overflow: hidden;
+	margin-left: 20px;
+	zoom: 1.5;
+}
+.wrapperName {
+	margin: 60px 110px 0 50px;
+	text-align: center;
+	border-radius: 20px;
+	padding: 40px;
+	background-color: $darken-background-color;
+	> h2 {
+		color: rgba(0, 221, 255, 0.88);
+	}
+}
+.wrapperHeader {
+	display: flex;
+	width: 100%;
+	> div:not(:first-child) {
+		margin-top: 60px;
+		> button {
+			margin-top: 20px;
+			padding: 0;
+			background-color: $background-color;
+			&:hover {
+				color: $hover-button-color;
+				transition: 0.3s;
+			}
+		}
+	}
+}
+.acceptButton {
+	display: flex;
+	> p {
+		letter-spacing: 1.2px;
+		margin-right: 30px;
+		> span {
+			padding: 4px;
+			color: $lighten-main;
+		}
+	}
+	margin: 30px 0 0 1140px;
+}
+.price {
+	width: 300px;
+	height: 100px;
+	background-color: $darken-background-color;
+	margin: 20px 20px;
+	text-align: center;
+	border-radius: 20px;
+	&:hover {
+		background-color: lighten($darken-background-color, 30%);
+		transition: 0.3s;
+		cursor: pointer;
+	}
+}
+.active {
+	width: 310px;
+	height: 130px;
+	background: $hover-button-color;
+	&:hover {
+		background-color: $hover-button-color;
+		transition: 0.3s;
+		cursor: pointer;
+	}
+	> h3 {
+		margin-top: 30px;
+	}
+}
