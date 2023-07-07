@@ -1,19 +1,21 @@
+@import '../../../_variables.scss';
+
 main {
 	width: 100vw;
-	height: 450px;
-	background-image: url('../../../assets/main-banner.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	& > h1 > span {
-		color: #d7f9ff;
+	& > div {
+		width: 100vw;
+		height: 450px;
+		backdrop-filter: blur(10px);
+		& > h1 > span {
+			color: $lighten-main;
+		}
 	}
 }
 .heading {
 	font-size: 50px;
 	font-weight: 1000;
 	margin: 0;
-	padding: 100px;
+	padding: 100px 0 0 100px;
 	max-width: 45%;
 	font-style: italic;
 }

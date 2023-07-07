@@ -1,4 +1,4 @@
-import bgImg from '../../../assets/andrew.jpg'
+import bgImg from '../../../assets/Auth.jpg'
 import { useAuthPage } from '../../../hooks/useAuthPage.js'
 import { useModal } from '../../../hooks/useModal'
 import Layout from '../../../layouts/Layout'
@@ -47,12 +47,12 @@ const AuthPage = () => {
 								Войти
 							</Button>
 						</div>
-						<p>
+						<h3>
 							Нет аккаунта?{' '}
 							<a onClick={() => setIsShow(!isShow)}>
 								Зарегистрироваться!
 							</a>
-						</p>
+						</h3>
 					</form>
 				)}
 			</div>

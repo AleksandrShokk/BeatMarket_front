@@ -1,0 +1,25 @@
+@import '../../_variables.scss';
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	& > div {
+		background-color: $darken-background-color;
+		padding: 10px;
+		border-radius: 30px;
+		& > a {
+			color: $main-color;
+			&:hover {
+				color: $green-button-color;
+			}
+			& > svg {
+				font-size: 30px;
+				padding: 0 10px;
+			}
+		}
+	}
+}

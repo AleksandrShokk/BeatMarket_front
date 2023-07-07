@@ -1,3 +1,4 @@
+@import '../../../_variables.scss';
 .buttonContainer {
 	display: flex;
 	justify-content: center;
@@ -9,9 +10,11 @@ form > div {
 }
 h1 {
 	text-align: center;
+	color: $lighten-main;
 }
-p {
+h3 {
 	text-align: center;
+	color: #e84921;
 	> a {
 		cursor: pointer;
 		text-align: center;

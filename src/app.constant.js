@@ -1,1 +1,1 @@
-export const TOKEN = 'auth'
+export const TOKEN = 'qlw[lwqp]'

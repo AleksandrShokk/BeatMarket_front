@@ -8,6 +8,7 @@ export const useAudio = url => {
 
 	useEffect(() => {
 		playing ? audio.play() : audio.pause()
+		audio.volume = 0.2
 	}, [playing])
 
 	useEffect(() => {

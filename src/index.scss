@@ -74,4 +74,5 @@ button:focus-visible {
 	align-items: center;
 	width: 100vw;
 	height: calc(100vh - 60px);
+	backdrop-filter: blur(10px);
 }

@@ -4,15 +4,30 @@
 	position: relative;
 }
 .wrapperPrice {
-	> div {
+	& > div {
 		position: absolute;
 		display: flex;
-		flex-wrap: wrap;
-		margin-left: 445px;
-		top: 200px;
-		height: 140px;
-		align-items: center;
-		> h2 {
+		flex-direction: column;
+		& > div {
+			> h3 {
+				color: $main-color;
+			}
+		}
+		&:first-child {
+			margin-left: 445px;
+			top: 200px;
+			height: 140px;
+			align-items: center;
+		}
+		&:nth-child(2) {
+			margin-left: 700px;
+			top: 200px;
+			align-items: start;
+		}
+		& > h5 {
+			margin: 25px 0;
+		}
+		& > h2 {
 			width: 100%;
 		}
 	}
@@ -29,6 +44,7 @@
 	text-align: center;
 	border-radius: 20px;
 	padding: 40px;
+	height: 350px;
 	background-color: $darken-background-color;
 	> h2 {
 		color: rgba(0, 221, 255, 0.88);
@@ -63,10 +79,10 @@
 	margin: 30px 0 0 1140px;
 }
 .price {
-	width: 300px;
-	height: 100px;
+	width: 200px;
+	height: 70px;
 	background-color: $darken-background-color;
-	margin: 20px 20px;
+	margin: 10px 20px;
 	text-align: center;
 	border-radius: 20px;
 	&:hover {
@@ -74,17 +90,20 @@
 		transition: 0.3s;
 		cursor: pointer;
 	}
+	& > h3 {
+		margin: 10px;
+	}
 }
 .active {
-	width: 310px;
-	height: 130px;
 	background: $hover-button-color;
 	&:hover {
 		background-color: $hover-button-color;
 		transition: 0.3s;
 		cursor: pointer;
 	}
-	> h3 {
-		margin-top: 30px;
-	}
+}
+p {
+	margin: 20px;
+	text-align: start;
+	letter-spacing: 1.5px;
 }

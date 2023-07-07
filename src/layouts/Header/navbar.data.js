@@ -5,7 +5,7 @@ export const navbar = [
 	},
 	{
 		heading: 'Продать биты',
-		link: '/sellBeat'
+		link: '/sellbeat'
 	},
 	{
 		heading: 'О нас',

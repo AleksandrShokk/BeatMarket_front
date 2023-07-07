@@ -25,7 +25,8 @@ export const useAuthPage = () => {
 	}, [isAuth])
 	const { mutate } = useMutation(
 		['auth'],
-		({ email, password }) => AuthService.main(email, password, type),
+		({ email, password, userName }) =>
+			AuthService.main(email, password, userName, type),
 		{
 			onSuccess: data => {
 				setIsAuth(true)

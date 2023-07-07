@@ -10,6 +10,18 @@ const RegisterModal = () => {
 			<h1>Регистрация</h1>
 			<Field
 				error={errors?.email?.message}
+				name='userName'
+				register={register}
+				options={{
+					...register('userName', {
+						required: 'Это обязательноe поле!'
+					})
+				}}
+				type='text'
+				placeholder='Ваше имя'
+			/>
+			<Field
+				error={errors?.email?.message}
 				name='email'
 				register={register}
 				options={{
@@ -30,7 +42,7 @@ const RegisterModal = () => {
 					})
 				}}
 				type='password'
-				placeholder='Введите пароль'
+				placeholder='Придумайте пароль'
 			/>
 			<div className={styles.buttonContainer}>
 				<Button clickHandler={() => setType('register')}>

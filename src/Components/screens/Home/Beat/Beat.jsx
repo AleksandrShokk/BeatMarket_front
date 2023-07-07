@@ -1,11 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom'
-import url from '../../../../assets/lonely_Master (1).wav'
 import { useLocalStorage } from '../../../../hooks/useLocalStorage'
 import styles from './Beat.module.scss'
 
 const Beat = ({ data }) => {
 	const [cart, setCart] = useLocalStorage('cart', {})
 	const navigate = useNavigate()
+	data?.map(item => {
+		if (item.isBought === true) {
+		}
+	})
+
 	return (
 		<div className={styles.container}>
 			<div>
@@ -16,13 +20,21 @@ const Beat = ({ data }) => {
 				</div>
 			</div>
 			{data?.map((item, index) => (
-				<div key={index} className={styles.properties}>
-					<h5>{item.name}</h5>
+				<div
+					key={index}
+					className={
+						item.isBought === false
+							? styles.properties
+							: styles.disActive
+					}
+				>
+					<h5>{`${item.name.toUpperCase().split('(')[0]}  (by ${
+						item.author
+					})`}</h5>
 					<audio
-						src={url}
+						src={item.pathMp3}
 						controls={true}
 						controlsList='nodownload'
-						loop
 					></audio>
 					<button
 						id={item.id}
@@ -32,10 +44,11 @@ const Beat = ({ data }) => {
 								name: item.name,
 								priceForMP3: item.priceForMP3,
 								priceForWav: item.priceForWav,
-								priceForSoundtracks: item.priceForSoundtracks
+								priceForSoundtracks: item.priceForSoundtracks,
+								pathTrack: item.pathMp3
 							})
 							setTimeout(() => {
-								navigate('/checkOut')
+								navigate('/checkout')
 							}, 1)
 						}}
 					>
