@@ -5,7 +5,6 @@ import Beat from './Beat/Beat'
 import styles from './Home.module.scss'
 const Home = () => {
 	const { data } = useListBeat()
-
 	return (
 		<>
 			<Layout bgImg={bgUrl} isActive={false}>

@@ -16,8 +16,9 @@ export const useGetProfile = () => {
 		const { data } = useProfile()
 		const nowDate = new Date()
 		const registeredDate = new Date(data?.createdAt)
+		console.log(data)
 		userInfo = {
-			nickName: data?.name,
+			nickName: data?.userName,
 			amountBeats: data?.amountBeats,
 			dayOnProject: getNumberOfDays(registeredDate, nowDate),
 			obtainedBeat: data?.obtainedBeat

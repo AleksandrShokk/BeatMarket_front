@@ -7,7 +7,7 @@ const Beat = ({ data }) => {
 	const navigate = useNavigate()
 	let counter = 0
 	data?.map(item => {
-		if (item.isBought === true) {
+		if (item.isBought === false) {
 			counter++
 		}
 	})
