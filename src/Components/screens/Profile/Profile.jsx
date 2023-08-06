@@ -1,11 +1,9 @@
 import { RiDownloadFill } from 'react-icons/ri'
 import { RxAvatar } from 'react-icons/rx'
-import { Link } from 'react-router-dom'
 import { useGetCurrentBeats } from '../../../hooks/useGetCurrentBeats'
 import { useGetProfile } from '../../../hooks/useGetProfile'
 import Footer from '../../../layouts/Footer/Footer'
 import Layout from '../../../layouts/Layout'
-import Button from '../../ui/Button'
 import styles from './Profile.module.scss'
 
 const Profile = () => {
@@ -17,7 +15,7 @@ const Profile = () => {
 				<div className={styles.wrapper}>
 					<aside className={styles.sidebar}>
 						<div>
-							<RxAvatar size={200} color='#a7a7a7' />
+							<RxAvatar size={200} />
 
 							<h2>{userInfo.nickName}</h2>
 							<h4>Статистика</h4>
@@ -29,9 +27,6 @@ const Profile = () => {
 								<p>Дней на проекте </p>
 								<p>{userInfo.dayOnProject}</p>
 							</div>
-							<Link>
-								<Button>Редактировать профиль</Button>
-							</Link>
 						</div>
 					</aside>
 
@@ -41,6 +36,7 @@ const Profile = () => {
 								<div>
 									<div className={styles.head}>
 										<h3>Название</h3>
+										<h3>Bpm</h3>
 										<h3>Время</h3>
 										<h3>Скачать</h3>
 									</div>
@@ -58,8 +54,9 @@ const Profile = () => {
 													.split('(')[0]
 											}
 										</h5>
+										<h5>{item.name.split('(')[1]}</h5>
 										<audio
-											src={`${item.trackPath}`}
+											src={item.trackPath}
 											controls={true}
 											loop
 											controlsList='nodownload'

@@ -1,9 +1,11 @@
 import Cookies from 'js-cookie'
 import { Link, useNavigate } from 'react-router-dom'
 import { TOKEN } from '../../app.constant'
+import logoLight from '../../assets/fullLogo-light.png'
 import logo from '../../assets/fullLogo.png'
 import { useAuth } from '../../hooks/useAuth'
 import { useProfile } from '../../hooks/useProfile'
+import Hamburger from './Hamburger/Hamburger'
 import styles from './Header.module.scss'
 import { navbar } from './navbar.data'
 
@@ -15,10 +17,18 @@ const Header = () => {
 		setIsAuth(false)
 	}
 	const { data } = useProfile()
+	const currentTheme = () => {
+		return window.matchMedia('(prefers-color-scheme: light)').matches
+	}
+
 	return (
 		<header className={styles.header}>
 			<Link to='/'>
-				<img src={logo} alt='logo' className={styles.logo} />
+				{currentTheme() ? (
+					<img src={logoLight} alt='logo' className={styles.logo} />
+				) : (
+					<img src={logo} alt='logo' className={styles.logo} />
+				)}
 			</Link>
 			<nav>
 				<ul>
@@ -35,6 +45,7 @@ const Header = () => {
 								<button
 									onClick={() => {
 										navigate(`/profile`)
+										location.reload()
 									}}
 								>
 									Профиль
@@ -70,6 +81,7 @@ const Header = () => {
 					</li>
 				</ul>
 			</nav>
+			<Hamburger />
 		</header>
 	)
 }

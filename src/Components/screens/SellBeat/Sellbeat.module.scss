@@ -25,3 +25,37 @@
 		}
 	}
 }
+@media screen and (max-width: 1024px) {
+	.textItems {
+		> h1 {
+			max-width: 90%;
+		}
+		> h3 {
+			width: 80%;
+		}
+	}
+}
+@media screen and (max-width: 425px) {
+	.textItems {
+		padding: 30px 20px;
+		> h1 {
+			max-width: 100%;
+			font-size: 25px;
+		}
+		> h3 {
+			width: 90%;
+		}
+	}
+}
+@media screen and (max-width: 320px) {
+	.textItems {
+		padding: 30px 20px;
+		> h1 {
+			max-width: 100%;
+			font-size: 18px;
+		}
+		> h3 {
+			width: 90%;
+		}
+	}
+}

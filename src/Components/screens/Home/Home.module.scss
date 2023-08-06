@@ -7,7 +7,7 @@ main {
 		height: 450px;
 		backdrop-filter: blur(10px);
 		& > h1 > span {
-			color: $lighten-main;
+			color: #ffffff;
 		}
 	}
 }
@@ -18,4 +18,25 @@ main {
 	padding: 100px 0 0 100px;
 	max-width: 45%;
 	font-style: italic;
+}
+
+@media (prefers-color-scheme: light) {
+	.heading {
+		color: #fff;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.heading {
+		max-width: 70%;
+		font-size: 30px;
+		padding: 100px 0;
+	}
+}
+@media screen and (max-width: 425px) {
+	.heading {
+		max-width: 80%;
+		font-size: 20px;
+		padding: 100px 0;
+	}
 }

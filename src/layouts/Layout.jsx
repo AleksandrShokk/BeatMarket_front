@@ -13,11 +13,13 @@ const Layout = ({ children, bgImg, heading, isActive }) => {
 				{children && (
 					<div
 						style={{
+							position: 'relative',
 							backdropFilter: 'blur(10px)',
 							backgroundImage: `url('${bgImg}')`,
 							backgroundPosition: 'center',
 							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover'
+							backgroundSize: 'cover',
+							zIndex: '-1'
 						}}
 					>
 						{children}

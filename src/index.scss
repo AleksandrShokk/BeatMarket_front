@@ -1,9 +1,13 @@
 @import './_variables.scss';
+@font-face {
+	font-family: font396;
+	src: url('./assets/font/font396.ttf');
+}
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: font396;
 	line-height: 1.5;
-	font-weight: 400;
-
+	font-weight: 300;
+	letter-spacing: 2px;
 	color-scheme: dark;
 	color: $main-color;
 	background-color: $background-color;
@@ -57,14 +61,21 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		color: $main-color;
-		background-color: $background-color;
+		background-color: $lighten-main;
+	}
+	a,
+	h3,
+	h1,
+	h2,
+	p {
+		color: #000;
 	}
 	a:hover {
 		color: #747bff;
 	}
 	button {
-		background-color: $button-color;
+		color: lighten($background-color, 20%);
+		background-color: transparent;
 	}
 }
 
@@ -75,4 +86,20 @@ button:focus-visible {
 	width: 100vw;
 	height: calc(100vh - 60px);
 	backdrop-filter: blur(10px);
+}
+
+@media screen and (max-width: 1024px) {
+	:root {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 768px) {
+	:root {
+		font-size: 12px;
+	}
+}
+@media screen and (max-width: 425px) {
+	:root {
+		font-size: 10px;
+	}
 }

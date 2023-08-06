@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import logo from '../../../assets/logo.png'
-import soundtrack from '../../../assets/soundTrack.png'
 import Layout from '../../../layouts/Layout'
 import Button from '../../ui/Button'
-import Player from '../../ui/Player'
 import styles from './CheckOut.module.scss'
 
 import cn from 'clsx'
@@ -14,6 +12,10 @@ const CheckOut = () => {
 	const [clickIndex, setClickIndex] = useState(0)
 
 	const [mutate, cartItems, currentPrice, setCurrentPrice] = useCheckout()
+	const currentTheme = () => {
+		return window.matchMedia('(prefers-color-scheme: light)').matches
+	}
+
 	return (
 		<Layout>
 			<div className={styles.wrapperItems}>
@@ -22,11 +24,16 @@ const CheckOut = () => {
 						<img src={logo} alt='' />
 						<h2>{cartItems.name.split('(')[0]}</h2>
 					</div>
-					<Player url={cartItems.pathTrack} />
-					<div className={styles.soundtrackContainer}>
-						<img src={soundtrack} alt='' />
-					</div>
 				</div>
+
+				<audio
+					src={cartItems.pathTrack}
+					controls={true}
+					loop
+					controlsList='nodownload'
+					className={styles.audio}
+				></audio>
+
 				<div className={styles.wrapperPrice}>
 					<div>
 						<h2>Выберите формат</h2>

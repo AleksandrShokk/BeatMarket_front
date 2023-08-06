@@ -5,8 +5,10 @@
 	align-items: center;
 	margin-top: 30px;
 }
-form > div {
-	justify-content: center;
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 h1 {
 	text-align: center;

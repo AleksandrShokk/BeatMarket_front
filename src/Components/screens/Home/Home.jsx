@@ -1,14 +1,29 @@
+import bgUrlLight from '../../../assets/main-banner.jpg'
 import bgUrl from '../../../assets/main-banner.png'
+import { useAuth } from '../../../hooks/useAuth'
 import { useListBeat } from '../../../hooks/useListBeat'
 import Layout from '../../../layouts/Layout'
 import Beat from './Beat/Beat'
 import styles from './Home.module.scss'
 const Home = () => {
 	const { data } = useListBeat()
+	const currentTheme = () => {
+		return window.matchMedia('(prefers-color-scheme: light)').matches
+	}
+	const { isAuth } = useAuth()
+	let f = 0
+	while ((f = 0 && isAuth)) {
+		location.reload()
+		f = 1
+	}
+
 	return (
 		<>
-			<Layout bgImg={bgUrl} isActive={false}>
-				<main>
+			<Layout
+				bgImg={currentTheme() ? bgUrlLight : bgUrl}
+				isActive={false}
+			>
+				<main id='main'>
 					<div>
 						<h1 className={styles.heading}>
 							Место, где ты найдешь <span>биты </span>на каждый

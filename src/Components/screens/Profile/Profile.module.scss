@@ -20,6 +20,7 @@
 		align-items: flex-start;
 		& > svg {
 			margin: auto;
+			color: #a7a7a7;
 		}
 		& > h2 {
 			margin: auto;
@@ -62,10 +63,13 @@
 		color: $main-color;
 	}
 	& > h3:nth-child(1) {
-		width: 36%;
+		width: 10%;
 	}
 	& > h3:nth-child(2) {
-		width: 59%;
+		width: 20%;
+	}
+	& > h3:nth-child(3) {
+		width: 70%;
 	}
 }
 .properties {
@@ -82,7 +86,7 @@
 		color: $lighten-main;
 	}
 	& > h5:nth-child(1) {
-		width: 22%;
+		width: 19%;
 	}
 	& > div {
 		margin: 0 40px 0 20px;
@@ -105,4 +109,66 @@
 }
 audio {
 	width: 80%;
+}
+@media (prefers-color-scheme: light) {
+	.sidebar {
+		background-color: darken($lighten-main, 50%);
+		> div {
+			> svg {
+				color: #000;
+			}
+			> div > p:nth-child(2) {
+				color: #000;
+			}
+		}
+	}
+	.properties {
+		> h5 {
+			color: darken($lighten-main, 50%);
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.wrapper {
+		margin: 0 auto;
+		justify-content: center;
+	}
+	.sidebar {
+		zoom: 0.7;
+		margin: 50px 100px 10px 0;
+	}
+	audio {
+		width: 100%;
+	}
+	.head {
+		display: none;
+	}
+	.properties {
+		margin-top: 30px;
+	}
+}
+@media screen and (max-width: 425px) {
+	.wrapper {
+		display: block;
+		> div {
+			width: 100%;
+		}
+	}
+	.sidebar {
+		zoom: 0.7;
+		margin: 70px auto;
+	}
+	/* .properties > div {
+		height: auto;
+		> button {
+			background-color: transparent;
+		}
+	} */
+	audio {
+		&::-webkit-media-controls-timeline {
+			display: none;
+		}
+		width: 70%;
+	}
 }

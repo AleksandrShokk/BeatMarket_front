@@ -1,23 +1,31 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../../hooks/useAuth'
 import { useLocalStorage } from '../../../../hooks/useLocalStorage'
+import Player from '../../../ui/Player'
 import styles from './Beat.module.scss'
 
 const Beat = ({ data }) => {
 	const [cart, setCart] = useLocalStorage('cart', {})
 	const navigate = useNavigate()
+	const { isAuth } = useAuth()
 	let counter = 0
 	data?.map(item => {
 		if (item.isBought === false) {
 			counter++
 		}
 	})
-
+	console.log(window.screen.width)
 	return (
 		<div className={styles.container}>
 			<div>
 				<div className={styles.head}>
 					<h3>Название</h3>
-					<h3>Время</h3>
+					<h3>BPM</h3>
+					{window.screen.width >= 700 ? (
+						<h3>Время</h3>
+					) : (
+						<h3>Старт</h3>
+					)}
 					<h3>Цена</h3>
 				</div>
 			</div>
@@ -36,30 +44,46 @@ const Beat = ({ data }) => {
 						<h5>{`${item.name.toUpperCase().split('(')[0]}  (by ${
 							item.author
 						})`}</h5>
-						<audio
-							src={item.pathMp3}
-							controls={true}
-							controlsList='nodownload'
-						></audio>
-						<button
-							id={item.id}
-							onClick={() => {
-								setCart({
-									id: item.id,
-									name: item.name,
-									priceForMP3: item.priceForMP3,
-									priceForWav: item.priceForWav,
-									priceForSoundtracks:
-										item.priceForSoundtracks,
-									pathTrack: item.pathMp3
-								})
-								setTimeout(() => {
-									navigate('/checkout')
-								}, 1)
-							}}
-						>
-							<Link>{item.priceForMP3}P</Link>
-						</button>
+						<h5>{item.name.split('(')[1]}</h5>
+						{window.screen.width >= 700 ? (
+							<audio
+								src={item.pathMp3}
+								controls={true}
+								controlsList='nodownload'
+							></audio>
+						) : (
+							<Player url={item.pathMp3} size={25} />
+						)}
+						{isAuth ? (
+							<button
+								id={item.id}
+								onClick={() => {
+									setCart({
+										id: item.id,
+										name: item.name,
+										priceForMP3: item.priceForMP3,
+										priceForWav: item.priceForWav,
+										priceForSoundtracks:
+											item.priceForSoundtracks,
+										pathTrack: item.pathMp3
+									})
+									setTimeout(() => {
+										navigate('/checkout')
+										location.reload()
+									}, 1)
+								}}
+							>
+								<Link>{item.priceForMP3}P</Link>
+							</button>
+						) : (
+							<button
+								onClick={() => {
+									navigate('/auth')
+								}}
+							>
+								<Link>{item.priceForMP3}P</Link>
+							</button>
+						)}
 					</div>
 				))
 			)}

@@ -1,0 +1,24 @@
+@import '.././../../_variables.scss';
+
+.menu {
+	position: absolute;
+	right: 0;
+	height: 170px;
+	width: 250px;
+	background: $background-color;
+	> ul {
+		text-align: end;
+		list-style: none;
+		> li {
+			padding: 5px 10px;
+		}
+	}
+}
+.buttonContainer {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+	> button {
+		margin-right: 16px;
+	}
+}

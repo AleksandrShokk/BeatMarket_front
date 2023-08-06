@@ -33,7 +33,13 @@ const Auth = () => {
 				placeholder='Введите пароль'
 			/>
 			<div className={styles.buttonContainer}>
-				<Button clickHandler={() => setType('login')}>Войти</Button>
+				<Button
+					clickHandler={() => {
+						setType('login')
+					}}
+				>
+					Войти
+				</Button>
 			</div>
 		</>
 	)

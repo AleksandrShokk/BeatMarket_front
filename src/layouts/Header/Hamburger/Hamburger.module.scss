@@ -1,0 +1,35 @@
+.hamburger {
+	display: none;
+	position: relative;
+	right: 15px;
+	top: 0;
+}
+.line {
+	width: 24px;
+	height: 3px;
+	background-color: #ecf0f1;
+	display: block;
+	margin: 6px auto;
+	transition: all 0.3s ease-in-out;
+	border-radius: 5px;
+	&:hover {
+		cursor: pointer;
+	}
+	&.line.active {
+		&:nth-child(1) {
+			transform: translateY(9px) rotate(45deg);
+		}
+		&:nth-child(2) {
+			opacity: 0;
+		}
+		&:nth-child(3) {
+			transform: translateY(-9px) rotate(-45deg);
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+}
