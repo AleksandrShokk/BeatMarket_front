@@ -14,7 +14,7 @@ const Beat = ({ data }) => {
 			counter++
 		}
 	})
-	console.log(window.screen.width)
+
 	return (
 		<div className={styles.container}>
 			<div>
