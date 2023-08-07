@@ -45,7 +45,6 @@ const Header = () => {
 								<button
 									onClick={() => {
 										navigate(`/profile`)
-										window.location.reload()
 									}}
 								>
 									Профиль
