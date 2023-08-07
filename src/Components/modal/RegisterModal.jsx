@@ -49,7 +49,15 @@ const RegisterModal = () => {
 					Зарегистрироваться
 				</Button>
 			</div>
-			<Link onClick={() => setISShow(false)}> Вернуться назад</Link>
+			<Link
+				onClick={() => {
+					setISShow(false)
+					location.reload()
+				}}
+			>
+				{' '}
+				Вернуться назад
+			</Link>
 		</form>
 	)
 }

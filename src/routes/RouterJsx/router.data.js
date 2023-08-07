@@ -1,9 +1,9 @@
-import CreateNewBeat from '../../Components/screens/Admin/CreateNewBeat'
-import AuthPage from '../../Components/screens/Auth/AuthPage'
-import CheckOut from '../../Components/screens/CheckOut/CheckOut'
-import Home from '../../Components/screens/Home/Home'
-import Profile from '../../Components/screens/Profile/Profile'
-import SellBeat from '../../Components/screens/SellBeat/SellBeat'
+import CreateNewBeat from '/src/Components/screens/Admin/CreateNewBeat.jsx'
+import AuthPage from '/src/Components/screens/Auth/AuthPage.jsx'
+import CheckOut from '/src/Components/screens/CheckOut/CheckOut.jsx'
+import Home from '/src/Components/screens/Home/Home.jsx'
+import Profile from '/src/Components/screens/Profile/Profile.jsx'
+import SellBeat from '/src/Components/screens/SellBeat/SellBeat.jsx'
 
 export const router = [
 	{
