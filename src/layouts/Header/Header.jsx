@@ -45,7 +45,6 @@ const Header = () => {
 								<button
 									onClick={() => {
 										navigate(`/profile`)
-										location.reload()
 									}}
 								>
 									Профиль
@@ -58,12 +57,9 @@ const Header = () => {
 								{data?.role === 'ADMIN' ? (
 									<button
 										onClick={() => {
-											setTimeout(() => {
-												navigate(
-													'/admin10229u32jdinebhqbwlcnamscns'
-												)
-												location.reload()
-											}, 1)
+											navigate(
+												'/admin10229u32jdinebhqbwlcnamscns'
+											)
 										}}
 									>
 										Добавить бит
