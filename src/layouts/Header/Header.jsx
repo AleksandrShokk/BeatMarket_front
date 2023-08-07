@@ -58,9 +58,11 @@ const Header = () => {
 								{data?.role === 'ADMIN' ? (
 									<button
 										onClick={() => {
-											navigate(
-												'/admin10229u32jdinebhqbwlcnamscns'
-											)
+											setTimeout(() => {
+												navigate(
+													'/admin10229u32jdinebhqbwlcnamscns'
+												)
+											}, 1)
 										}}
 									>
 										Добавить бит
