@@ -90,17 +90,35 @@ const CheckOut = () => {
 					Цена <span>{currentPrice}</span> руб{' '}
 				</p>
 				{clickIndex === 0 && (
-					<a onClick={() => mutate()}>
+					<a
+						onClick={() =>
+							/*mutate()*/ alert(
+								'Приносим извинения! Оплата не работает'
+							)
+						}
+					>
 						<Button>Подтвердить</Button>
 					</a>
 				)}
 				{clickIndex === 1 && (
-					<a onClick={() => mutate()}>
+					<a
+						onClick={() =>
+							/*mutate()*/ alert(
+								'Приносим извинения! Оплата не работает'
+							)
+						}
+					>
 						<Button>Подтвердить</Button>
 					</a>
 				)}
 				{clickIndex === 2 && (
-					<a onClick={() => mutate()}>
+					<a
+						onClick={() =>
+							/*mutate()*/ alert(
+								'Приносим извинения! Оплата не работает'
+							)
+						}
+					>
 						<Button>Подтвердить</Button>
 					</a>
 				)}
