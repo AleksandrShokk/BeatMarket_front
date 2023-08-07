@@ -67,7 +67,6 @@ const Beat = ({ data }) => {
 											item.priceForSoundtracks,
 										pathTrack: item.pathMp3
 									})
-									setTimeout(() => {}, 1)
 								}}
 							>
 								<Link to='/checkout'>{item.priceForMP3}P</Link>
