@@ -62,6 +62,7 @@ const Header = () => {
 												navigate(
 													'/admin10229u32jdinebhqbwlcnamscns'
 												)
+												location.reload()
 											}, 1)
 										}}
 									>
