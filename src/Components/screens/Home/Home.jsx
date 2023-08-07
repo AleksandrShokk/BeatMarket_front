@@ -9,7 +9,6 @@ const Home = () => {
 	const currentTheme = () => {
 		return window.matchMedia('(prefers-color-scheme: light)').matches
 	}
-
 	return (
 		<>
 			<Layout

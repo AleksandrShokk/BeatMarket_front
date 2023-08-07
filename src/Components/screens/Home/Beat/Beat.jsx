@@ -69,6 +69,7 @@ const Beat = ({ data }) => {
 									})
 									setTimeout(() => {
 										navigate('/checkout')
+										location.reload()
 									}, 1)
 								}}
 							>
