@@ -27,3 +27,9 @@ form > a {
 	display: flex;
 	justify-content: center;
 }
+
+@media (prefers-color-scheme: light) {
+	.heading {
+		color: $lighten-main;
+	}
+}

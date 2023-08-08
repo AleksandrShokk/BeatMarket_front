@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useAuthPage } from '../../hooks/useAuthPage'
 import styles from '../screens/Auth/Auth.module.scss'
 import Button from '../ui/Button'
@@ -49,7 +48,7 @@ const RegisterModal = () => {
 					Зарегистрироваться
 				</Button>
 			</div>
-			<Link to='/'> Вернуться на главную</Link>
+			<a href=''> Вернуться назад</a>
 		</form>
 	)
 }

@@ -48,6 +48,9 @@
 		background-color: $main-color;
 
 		& > nav > ul > li {
+			& > a > button {
+				background-color: transparent;
+			}
 			& > a:hover {
 				color: #ffffff;
 			}

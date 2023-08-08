@@ -47,7 +47,7 @@ const AuthPage = () => {
 								Войти
 							</Button>
 						</div>
-						<h3>
+						<h3 className={styles.heading}>
 							Нет аккаунта?{' '}
 							<a onClick={() => setIsShow(!isShow)}>
 								Зарегистрироваться!

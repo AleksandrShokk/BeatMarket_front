@@ -13,7 +13,10 @@ const SellBeat = () => {
 					</h1>
 					<h3>
 						Присылай свои работы на нашу почту, и мы обсудим условия
-						сотрудничества! <a href=''>beatstore.coop@gmail.com</a>
+						сотрудничества!{' '}
+						<a href='mailto:beatspace.coop@gmail.com'>
+							beatspace.coop@gmail.com
+						</a>
 					</h3>
 				</div>
 			</Layout>

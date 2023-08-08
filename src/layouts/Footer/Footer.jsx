@@ -9,10 +9,10 @@ const Footer = () => {
 				<a href=''>
 					<BsTelegram />
 				</a>
-				<a href=''>
+				<a href='mailto:beatspace.coop@gmail.com'>
 					<AiOutlineMail />
 				</a>
-				<a href=''>
+				<a href='https://vk.com/beat_space'>
 					<SlSocialVkontakte />
 				</a>
 			</div>

@@ -1,3 +1,4 @@
+import About from '/src/Components/screens/About/About'
 import CreateNewBeat from '/src/Components/screens/Admin/CreateNewBeat.jsx'
 import AuthPage from '/src/Components/screens/Auth/AuthPage.jsx'
 import CheckOut from '/src/Components/screens/CheckOut/CheckOut.jsx'
@@ -27,17 +28,19 @@ export const router = [
 		isAuth: true
 	},
 
-	// {
-	// 	// component: <About/>
-	// },
+	{
+		component: About,
+		path: '/about',
+		isAuth: false
+	},
 	{
 		component: SellBeat,
-		path: 'sellbeat',
+		path: '/sellbeat',
 		isAuth: true
 	},
 	{
 		component: CreateNewBeat,
-		path: 'admin10229u32jdinebhqbwlcnamscns',
+		path: '/admin10229u32jdinebhqbwlcnamscns',
 		isAuth: true
 	}
 ]

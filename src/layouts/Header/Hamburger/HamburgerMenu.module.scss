@@ -22,3 +22,12 @@
 		margin-right: 16px;
 	}
 }
+
+@media (prefers-color-scheme: light) {
+	.menu {
+		background: $lighten-main;
+	}
+	button {
+		background-color: $main-color;
+	}
+}
